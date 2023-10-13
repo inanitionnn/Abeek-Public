@@ -1,0 +1,46 @@
+:root {
+  --toastify-color-light: hsl(var(--b2) / 1);
+  --toastify-color-dark: hsl(var(--n) / 1);
+  --toastify-color-info: hsl(var(--in) / 1);
+  --toastify-color-success: hsl(var(--su) / 1);
+  --toastify-color-warning: hsl(var(--wa) / 1);
+  --toastify-color-error: hsl(var(--er) / 1);
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+
+  --toastify-text-color-light: hsl(var(--bc) / 1);
+  --toastify-text-color-dark: hsl(var(--nc) / 1);
+
+  --toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+  --toastify-color-progress-light: linear-gradient(
+    to right,
+    hsl(var(--p) / 1),
+    hsl(var(--a) / 1),
+    hsl(var(--in) / 1),
+    hsl(var(--s) / 1)
+  );
+
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+}

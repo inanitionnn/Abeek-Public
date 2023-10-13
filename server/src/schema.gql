@@ -1,0 +1,989 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input AcceptModerMediaInput {
+  isChecked: Boolean
+  isPublic: Boolean
+  media: MappedMedia!
+  mediaId: String!
+  mediaType: MediaEnum!
+  oldImage: String
+  reportId: String
+}
+
+input AddMediaInput {
+  mediaId: String!
+  mediaType: MediaEnum!
+  note: String
+  rate: Int
+  watched: WatchedEnum
+}
+
+input AddReportInput {
+  mediaId: String
+  mediaType: MediaEnum
+  report: String
+  reportType: ReportEnum!
+  userId: String
+}
+
+input AddRoleUserInput {
+  role: RolesEnum!
+  userEmail: String!
+}
+
+type AuthResponse {
+  email: String!
+  id: ID!
+  name: String!
+  picture: String
+  token: String!
+}
+
+input BanUserInput {
+  banReason: String!
+  userId: String!
+}
+
+type BookBaseResponse {
+  author: [String!]
+  bookType: BookEnum
+  country: String
+  description: String
+  genres: [String!]
+  id: String
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  pages: Int
+  tags: [String!]
+  title: String
+  year: Int
+}
+
+enum BookEnum {
+  fiction
+  nonFiction
+}
+
+type BookMediaResponse {
+  author: [String!]
+  bookType: BookEnum
+  country: String
+  description: String
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  note: String
+  pages: Int
+  rate: Int
+  tags: [String!]
+  title: String
+  watched: WatchedEnum
+  year: Int
+}
+
+type BookParseResponse {
+  author: [String!]
+  bookType: BookEnum
+  country: String
+  description: String
+  genres: [String!]
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  pages: Int
+  tags: [String!]
+  title: String
+  year: Int
+}
+
+type BookSearchResponse {
+  author: [String!]
+  bookType: BookEnum
+  country: String
+  description: String
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  pages: Int
+  tags: [String!]
+  title: String
+  year: Int
+}
+
+type BooksStatsResponse {
+  all: MediaStatsResponse
+  fiction: MediaStatsResponse
+  nonFiction: MediaStatsResponse
+}
+
+enum ChangedEnum {
+  AddToCollection
+  changeNote
+  changeRate
+  changeWatchType
+}
+
+type ComicsBaseResponse {
+  author: [String!]
+  comicsType: ComicsEnum
+  country: String
+  description: String
+  endYear: Int
+  genres: [String!]
+  id: String
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+  volumes: Int
+}
+
+enum ComicsEnum {
+  comics
+  graphicNovel
+  manga
+  manhwa
+}
+
+type ComicsMediaResponse {
+  author: [String!]
+  comicsType: ComicsEnum
+  country: String
+  description: String
+  endYear: Int
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  note: String
+  rate: Int
+  startYear: Int
+  tags: [String!]
+  title: String
+  volumes: Int
+  watched: WatchedEnum
+}
+
+type ComicsParseResponse {
+  author: [String!]
+  comicsType: ComicsEnum
+  country: String
+  description: String
+  endYear: Int
+  genres: [String!]
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+  volumes: Int
+}
+
+type ComicsSearchResponse {
+  author: [String!]
+  comicsType: ComicsEnum
+  country: String
+  description: String
+  endYear: Int
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+  volumes: Int
+}
+
+type ComicsStatsResponse {
+  all: MediaStatsResponse
+  comics: MediaStatsResponse
+  graphicNovel: MediaStatsResponse
+  manga: MediaStatsResponse
+  manhwa: MediaStatsResponse
+}
+
+input CreateMediaInput {
+  createdType: CreatedEnum!
+  media: MappedParseMedia!
+  mediaType: MediaEnum!
+  note: String
+  rate: Int
+  report: String
+  watched: WatchedEnum
+}
+
+enum CreatedEnum {
+  gpt
+  self
+  text
+  wiki
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input EmbeddingSearchInput {
+  count: Int!
+  mediaType: MediaEnum!
+  message: String!
+}
+
+type FilmBaseResponse {
+  boxOffice: String
+  budget: String
+  country: String
+  directedBy: [String!]
+  filmType: FilmEnum
+  genres: [String!]
+  id: String
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  plot: String
+  runTime: String
+  starring: [String!]
+  tags: [String!]
+  title: String
+  year: Int
+}
+
+enum FilmEnum {
+  animated
+  anime
+  movie
+}
+
+type FilmMediaResponse {
+  boxOffice: String
+  budget: String
+  country: String
+  directedBy: [String!]
+  filmType: FilmEnum
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  note: String
+  plot: String
+  rate: Int
+  runTime: String
+  starring: [String!]
+  tags: [String!]
+  title: String
+  watched: WatchedEnum
+  year: Int
+}
+
+type FilmParseResponse {
+  boxOffice: String
+  budget: String
+  country: String
+  directedBy: [String!]
+  filmType: FilmEnum
+  genres: [String!]
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  plot: String
+  runTime: String
+  starring: [String!]
+  tags: [String!]
+  title: String
+  year: Int
+}
+
+type FilmSearchResponse {
+  boxOffice: String
+  budget: String
+  country: String
+  directedBy: [String!]
+  filmType: FilmEnum
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  plot: String
+  runTime: String
+  starring: [String!]
+  tags: [String!]
+  title: String
+  year: Int
+}
+
+type FilmsStatsResponse {
+  all: MediaStatsResponse
+  animated: MediaStatsResponse
+  anime: MediaStatsResponse
+  movie: MediaStatsResponse
+}
+
+type FollowResponse {
+  id: String!
+  name: String!
+  picture: String
+}
+
+type FollowUser {
+  id: ID!
+  name: String!
+  picture: String
+}
+
+type Follower {
+  email: String
+  follow: Boolean
+  id: ID
+  name: String
+  picture: String
+}
+
+type GenresResponse {
+  genres: [String!]
+}
+
+input GetFollowInput {
+  followId: String!
+  userId: String
+}
+
+input GetFollowsMediaInput {
+  count: Int!
+  page: Int
+}
+
+input GetGenresInput {
+  bookType: BookEnum
+  comicsType: ComicsEnum
+  filmType: FilmEnum
+  inUserMedia: Boolean!
+  mediaType: MediaEnum!
+  seriesType: SeriesEnum
+}
+
+input GetMediaInput {
+  followId: String
+  mediaId: String
+  mediaType: MediaEnum
+  userId: String
+}
+
+union GetMediaType = BookMediaResponse | ComicsMediaResponse | FilmMediaResponse | SeriesMediaResponse
+
+input GetModerEditMediaInput {
+  mediaId: String!
+  mediaType: MediaEnum!
+}
+
+type GetModerMediaCountResponse {
+  mediaCount: Int
+  reportsCount: ReportsCountResponse
+}
+
+input GetNearestMediaInput {
+  count: Int!
+  mediaId: String!
+  mediaType: MediaEnum!
+}
+
+input GetRandomMediaInput {
+  InUserMedia: Boolean!
+  bookType: BookEnum
+  comicsType: ComicsEnum
+  count: Int!
+  filmType: FilmEnum
+  fromYear: Int
+  genres: [String!]
+  mediaType: MediaEnum!
+  seriesType: SeriesEnum
+  toYear: Int
+}
+
+input GetUserMediaInput {
+  bookType: BookEnum
+  comicsType: ComicsEnum
+  count: Int!
+  filmType: FilmEnum
+  mediaTYpe: MediaEnum!
+  page: Int!
+  seriesType: SeriesEnum
+  sorted: SortedEnum
+  userId: String
+  watched: WatchedEnum
+}
+
+input GptInput {
+  isAfter2021: Boolean
+  isAllFields: Boolean
+  isJson: Boolean
+  keys: [String!]
+  mediaType: MediaEnum!
+  query: String!
+}
+
+type ImageResponse {
+  link: String!
+}
+
+input ImagesInput {
+  count: Int!
+  mediaType: MediaEnum!
+  query: String!
+}
+
+type ImagesResponse {
+  additionalMediaTokens: Int!
+  links: [String!]
+  mediaTokens: Int!
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+}
+
+input MappedMedia {
+  author: [String!]
+  bookType: BookEnum
+  boxOffice: String
+  budget: String
+  comicsType: ComicsEnum
+  country: String
+  description: String
+  directedBy: [String!]
+  endYear: Int
+  filmType: FilmEnum
+  genres: [String!]
+  image: String
+  language: String
+  media: MediaEnum
+  pages: Int
+  plot: String
+  runTime: String
+  seasons: [SeriesSeasonInput!]
+  seriesType: SeriesEnum
+  starring: [String!]
+  startYear: Int
+  tags: [String!]
+  title: String
+  volumes: Int
+  year: Int
+}
+
+input MappedParseMedia {
+  author: [String!]
+  bookType: BookEnum
+  boxOffice: String
+  budget: String
+  comicsType: ComicsEnum
+  country: String
+  description: String
+  directedBy: [String!]
+  endYear: Int
+  filmType: FilmEnum
+  genres: [String!]
+  image: String
+  language: String
+  media: MediaEnum
+  pages: Int
+  plot: String
+  runTime: String
+  seasons: [SeriesSeasonRateInput!]
+  seriesType: SeriesEnum
+  starring: [String!]
+  startYear: Int
+  tags: [String!]
+  title: String
+  volumes: Int
+  year: Int
+}
+
+union MediaBaseType = BookBaseResponse | ComicsBaseResponse | FilmBaseResponse | SeriesBaseResponse
+
+enum MediaEnum {
+  book
+  comics
+  film
+  series
+}
+
+type MediaFollowResponse {
+  media: MediaBaseType
+  user: FollowUser
+  userMedia: UserMediaResponse
+}
+
+type MediaModerResponse {
+  createdType: CreatedEnum
+  creator: User
+  media: MediaModerType
+  report: String
+  searchMedia: [MediaBaseType!]
+}
+
+union MediaModerType = BookBaseResponse | ComicsBaseResponse | FilmBaseResponse | SeriesModerResponse
+
+type MediaParseResponse {
+  additionalMediaTokens: Int!
+  media: MediaParseType!
+  mediaTokens: Int!
+}
+
+union MediaParseType = BookParseResponse | ComicsParseResponse | FilmParseResponse | SeriesParseResponse
+
+type MediaReportResponse {
+  createdType: CreatedEnum
+  creator: User
+  informer: User
+  media: MediaModerType!
+  report: String
+  reportId: String
+}
+
+union MediaSearchType = BookSearchResponse | ComicsSearchResponse | FilmSearchResponse | SeriesSearchResponse
+
+type MediaStatsResponse {
+  abandonedCount: Int
+  allCount: Int
+  averageRating: Float
+  completedCount: Int
+  pausedCount: Int
+  plannedCount: Int
+  reviewingCount: Int
+  viewingCount: Int
+}
+
+type ModerReportAccountResponse {
+  informerUser: User
+  reportId: String!
+  reportedUser: User
+}
+
+type ModerReportNoteResponse {
+  informerUser: User
+  mediaId: String
+  note: String
+  reportId: String!
+  reportedUser: User
+}
+
+type Mutation {
+  acceptModerMedia(acceptModerMediaInput: AcceptModerMediaInput!): SuccessResponse
+  acceptWarning(warningInput: WarningInput!): SuccessResponse!
+  activate(link: String!): AuthResponse!
+  addFollow(followId: String!): SuccessResponse!
+  addMediaToUser(addMediaInput: AddMediaInput!): SuccessResponse!
+  addReport(addReportInput: AddReportInput!): SuccessResponse
+  addRole(addRoleUserInput: AddRoleUserInput!): User!
+  banReportsUser(userId: String!): User!
+  banUser(banUserInput: BanUserInput!): User!
+  createMedia(createMediaInput: CreateMediaInput!): SuccessResponse!
+  deleteMediaFromCollection(mediaId: String!): SuccessResponse
+  deleteReport(reportId: String!): SuccessResponse!
+  forgotPassword(email: String!): SuccessResponse!
+  login(loginUserInput: LoginUserInput!): AuthResponse!
+  logout: SuccessResponse!
+  refresh: TokenResponse!
+  registration(registrationInput: RegistrationInput!): SuccessResponse!
+  removeFollow(followId: String!): SuccessResponse!
+  resetPassword(resetPasswordInput: ResetPasswordInput!): SuccessResponse!
+  setAllWatchedNotifications: SuccessResponse!
+  unbanUser(userEmail: String!): User!
+  updateUser(updateUserInput: UpdateUserInput!): SuccessResponse!
+  updateUserMedia(updateUserMediaInput: UpdateUserMediaInput!): SuccessResponse
+}
+
+enum NotificationEnum {
+  ban
+  base
+  follow
+  newRole
+  tokens
+  unfollow
+  update
+  warning
+}
+
+type NotificationResponse {
+  createdAt: Date
+  follower: Follower
+  followerId: String
+  id: String!
+  isWatched: Boolean
+  notification: String
+  type: NotificationEnum!
+  userId: String!
+}
+
+type ProfileInfoReponse {
+  followerCount: Int
+  followingCount: Int
+  id: String!
+  mediaCount: Int
+  mediaStats: StatsReponse
+  name: String!
+  note: String
+  picture: String
+}
+
+type Query {
+  downloadFileByLink(url: String!): ImageResponse!
+  embeddingSearch(embeddingSearchInput: EmbeddingSearchInput!): [MediaSearchType!]
+  getAllUsers: [User!]!
+  getFollowInfo(getFollowInput: GetFollowInput!): getFollowInfoResponse!
+  getFollowsMedia(getFollowsMediaInput: GetFollowsMediaInput!): [MediaFollowResponse!]
+  getGenres(getGenresInput: GetGenresInput!): GenresResponse
+  getMedia(getMediaInput: GetMediaInput!): GetMediaType!
+  getModerEditMedia(getModerEditMediaInput: GetModerEditMediaInput!): MediaModerType
+  getModerMedia: MediaModerResponse
+  getModerMediaCount: GetModerMediaCountResponse
+  getModerReportAccount: ModerReportAccountResponse
+  getModerReportMedia: MediaReportResponse
+  getModerReportNote: ModerReportNoteResponse
+  getNearMedia(getNearestMediaInput: GetNearestMediaInput!): [MediaSearchType!]
+  getProfileInfo: ProfileInfoReponse!
+  getRandomMedia(getRandomMediaInput: GetRandomMediaInput!): [MediaBaseType!]
+  getUserFollowers: [FollowResponse!]!
+  getUserFollows: [FollowResponse!]!
+  getUserMedia(getUserMediaInput: GetUserMediaInput!): [GetMediaType!]
+  getUserNotifications: [NotificationResponse!]!
+  gptMediaParse(gptInput: GptInput!): MediaParseResponse!
+  gptTitleParse(queryInput: QueryInput!): TitleResponse!
+  imageParse(imagesInput: ImagesInput!): ImagesResponse!
+  searchMedia(searchInput: SearchInput!): [MediaSearchType!]
+  wikiMediaParse(queryInput: QueryInput!): MediaParseResponse!
+}
+
+input QueryInput {
+  mediaType: MediaEnum!
+  query: String!
+}
+
+input RegistrationInput {
+  email: String!
+  name: String!
+  password: String!
+}
+
+enum ReportEnum {
+  account
+  media
+  note
+}
+
+type ReportsCountResponse {
+  account: Int
+  media: Int
+  note: Int
+}
+
+input ResetPasswordInput {
+  password: String!
+  resetLink: String!
+}
+
+enum RolesEnum {
+  Admin
+  Moder
+  User
+}
+
+input SearchInput {
+  mediaType: MediaEnum!
+  query: String!
+}
+
+type SeriesBaseResponse {
+  country: String
+  directedBy: [String!]
+  endYear: Int
+  genres: [String!]
+  id: String
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  plot: String
+  seriesType: SeriesEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+}
+
+enum SeriesEnum {
+  animated
+  anime
+  tv
+}
+
+type SeriesMediaResponse {
+  country: String
+  directedBy: [String!]
+  endYear: Int
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  note: String
+  plot: String
+  rate: Int
+  seasons: [SeriesSeasonRateResponse!]
+  seriesType: SeriesEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+  watched: WatchedEnum
+}
+
+type SeriesModerResponse {
+  country: String
+  directedBy: [String!]
+  endYear: Int
+  genres: [String!]
+  id: String
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  plot: String
+  seasons: [SeriesSeasonResponse!]
+  seriesType: SeriesEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+}
+
+type SeriesParseResponse {
+  country: String
+  directedBy: [String!]
+  endYear: Int
+  genres: [String!]
+  image: String
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  plot: String
+  seasons: [SeriesSeasonResponse!]
+  seriesType: SeriesEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+}
+
+type SeriesSearchResponse {
+  country: String
+  directedBy: [String!]
+  endYear: Int
+  genres: [String!]
+  id: String
+  image: String
+  inUserMedia: Boolean
+  isPublic: Boolean
+  language: String
+  media: MediaEnum
+  plot: String
+  seriesType: SeriesEnum
+  startYear: Int
+  tags: [String!]
+  title: String
+}
+
+input SeriesSeasonInput {
+  episodes: Int
+  id: String
+  season: Int
+  title: String
+}
+
+input SeriesSeasonRateInput {
+  episodes: Int
+  id: String
+  rate: Int
+  season: Int
+  title: String
+}
+
+type SeriesSeasonRateResponse {
+  episodes: Int
+  id: String
+  rate: Int
+  season: Int
+  title: String
+}
+
+type SeriesSeasonResponse {
+  episodes: Int
+  id: String
+  season: Int
+  title: String
+}
+
+type SeriesStatsResponse {
+  all: MediaStatsResponse
+  animated: MediaStatsResponse
+  anime: MediaStatsResponse
+  tv: MediaStatsResponse
+}
+
+enum SortedEnum {
+  dateAsc
+  dateDesc
+  rateAsc
+  rateDesc
+  titleAsc
+  titleDesc
+  yearAsc
+  yearDesc
+}
+
+type StatsReponse {
+  books: BooksStatsResponse
+  comics: ComicsStatsResponse
+  films: FilmsStatsResponse
+  series: SeriesStatsResponse
+}
+
+type SuccessResponse {
+  success: Boolean!
+}
+
+type TitleResponse {
+  additionalMediaTokens: Int!
+  mediaTokens: Int!
+  title: String!
+  year: Int
+}
+
+type TokenResponse {
+  token: ID!
+}
+
+input UpdateUserInput {
+  name: String
+  note: String
+}
+
+input UpdateUserMediaInput {
+  mediaId: String!
+  note: String
+  rate: Int
+  seasons: [SeriesSeasonRateInput!]
+  watched: WatchedEnum
+}
+
+type User {
+  activationLink: ID
+  additionalMediaTokens: Int!
+  banReason: ID
+  canSendReport: Boolean!
+  createdAt: DateTime!
+  email: String!
+  id: ID!
+  isActivated: Boolean!
+  isBanned: Boolean!
+  mediaTokens: Int!
+  name: String!
+  note: String
+  password: String!
+  picture: String
+  resetPasswordLink: ID
+  role: RolesEnum!
+  warnings: [String!]
+}
+
+type UserMediaResponse {
+  changed: [ChangedEnum!]
+  mediaId: String
+  mediaType: MediaEnum
+  note: String
+  rate: Int
+  updatedAt: Date
+  userId: String
+  watched: WatchedEnum
+}
+
+enum WarningEnum {
+  copyright
+  pornography
+  spam
+  violence
+}
+
+input WarningInput {
+  description: String
+  mediaId: String
+  userId: String!
+  warning: WarningEnum!
+  warningObject: WarningObjectEnum!
+}
+
+enum WarningObjectEnum {
+  accountImage
+  accountName
+  accountNote
+  media
+  mediaNote
+  report
+}
+
+enum WatchedEnum {
+  abandoned
+  completed
+  paused
+  planned
+  rated
+  reviewing
+  viewing
+}
+
+type getFollowInfoResponse {
+  bookCount: Int
+  comicsCount: Int
+  filmCount: Int
+  follow: Boolean
+  id: String!
+  name: String!
+  note: String
+  picture: String
+  seriesCount: Int
+}
