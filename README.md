@@ -8,6 +8,8 @@ Abeek is a passion project that marks my initial foray into software development
 
 Abeek is a miniature social network that allows users to curate collections of their favorite movies, books, TV series, comics, and more. Users can also share their collections with friends and keep track of statistics related to their interests.
 
+![screenshot](/screenshot.jpg)
+
 ## Technology Stack
 
 - **Languages:** TypeScript, Nodejs, PostgreSQL
